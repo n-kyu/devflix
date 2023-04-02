@@ -1,10 +1,19 @@
 // imports
-import Input from "@/components/input";
 import { useCallback, useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
+
+import Input from "@/components/input";
 import axios from "axios";
+
+// import icons
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 // Auth method
 const Auth = () => {
+    // seRouter
+    const router = useRouter();
     // useStates
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -17,6 +26,23 @@ const Auth = () => {
         );
     }, []);
 
+    // login method
+    const login = useCallback(async () => {
+        try {
+            await signIn("credentials", {
+                email,
+                password,
+                redirect: false,
+                callbackUrl: "/",
+            });
+
+            router.push("/");
+        } catch (error) {
+            console.log(error);
+        }
+    }, [email, password, router]);
+
+    // register method
     const register = useCallback(async () => {
         try {
             await axios.post("/api/register", {
@@ -24,10 +50,13 @@ const Auth = () => {
                 name,
                 password,
             });
+
+            login();
         } catch (error) {
             console.log(error);
         }
-    }, [email, name, password]);
+    }, [email, name, password, login]);
+    //
 
     return (
         <div className="relative h-full w-full bg-[url('/images/hero-bg.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
@@ -77,13 +106,61 @@ const Auth = () => {
                                 />
                                 <div>
                                     <button
-                                        onClick={register}
+                                        onClick={
+                                            variant === "login"
+                                                ? login
+                                                : register
+                                        }
                                         className="bg-purple-800 py-3 text-white rounded-md w-full mt-10 hover:bg-purple-950 transition"
                                     >
                                         {variant === "login"
                                             ? "Login"
                                             : "Create Account"}
                                     </button>
+                                    <div className="flex flex-row items-center gap-4 mt-8 justify-center">
+                                        <div
+                                            onClick={() =>
+                                                signIn("google", {
+                                                    callbackUrl: "/",
+                                                })
+                                            }
+                                            className="
+                                            w-10
+                                            h-10
+                                            bg-white
+                                            rounded-full
+                                            flex
+                                            items-center
+                                            justify-center
+                                            cursor-pointer
+                                            hover:opacity-80
+                                            transition                                            
+                                        "
+                                        >
+                                            <FcGoogle size={30} />
+                                        </div>
+                                        <div
+                                            onClick={() =>
+                                                signIn("github", {
+                                                    callbackUrl: "/",
+                                                })
+                                            }
+                                            className="
+                                            w-10
+                                            h-10
+                                            bg-white
+                                            rounded-full
+                                            flex
+                                            items-center
+                                            justify-center
+                                            cursor-pointer
+                                            hover:opacity-80
+                                            transition                                            
+                                        "
+                                        >
+                                            <FaGithub size={30} />
+                                        </div>
+                                    </div>
                                     <p className="text-neutral-500 mt-4">
                                         {variant === "login"
                                             ? "New to Devflix?"
