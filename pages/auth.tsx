@@ -1,7 +1,6 @@
 // imports
 import { useCallback, useState } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/router";
 
 import Input from "@/components/input";
 import axios from "axios";
@@ -12,8 +11,6 @@ import { FaGithub } from "react-icons/fa";
 
 // Auth method
 const Auth = () => {
-    // seRouter
-    const router = useRouter();
     // useStates
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -32,15 +29,12 @@ const Auth = () => {
             await signIn("credentials", {
                 email,
                 password,
-                redirect: false,
-                callbackUrl: "/",
+                callbackUrl: "/profiles",
             });
-
-            router.push("/");
         } catch (error) {
             console.log(error);
         }
-    }, [email, password, router]);
+    }, [email, password]);
 
     // register method
     const register = useCallback(async () => {
@@ -121,7 +115,7 @@ const Auth = () => {
                                         <div
                                             onClick={() =>
                                                 signIn("google", {
-                                                    callbackUrl: "/",
+                                                    callbackUrl: "/profiles",
                                                 })
                                             }
                                             className="
@@ -142,7 +136,7 @@ const Auth = () => {
                                         <div
                                             onClick={() =>
                                                 signIn("github", {
-                                                    callbackUrl: "/",
+                                                    callbackUrl: "/profiles",
                                                 })
                                             }
                                             className="

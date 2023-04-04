@@ -1,21 +1,36 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import Link from "next/link";
+// imports
+import { getSession, signOut } from "next-auth/react";
+import { NextPageContext } from "next";
+import useCurrentUser from "@/hooks/useCurrentUser";
 
-const inter = Inter({ subsets: ["latin"] });
+export async function getServerSideProps(context: NextPageContext) {
+    const session = await getSession(context);
+
+    // checking available session exist if its doesn't redirect to /auth
+    if (!session) {
+        return {
+            redirect: {
+                destination: "/auth",
+                permanent: false,
+            },
+        };
+    }
+
+    return {
+        props: {},
+    };
+}
 
 export default function Home() {
+    const { data: user } = useCurrentUser();
+
     return (
         <>
             <h1 className="text-8xl text-red-200">Devflix test</h1>
-            <Link
-                className="text-6xl text-red-700 cursor-pointer hover:text-red-950 transition"
-                href="/auth"
-            >
-                click to Login page
-            </Link>
+            <p className="text-red-200"> Logged in as : {user?.name} </p>
+            <button className="h-10 w-full bg-white" onClick={() => signOut()}>
+                Logout
+            </button>
         </>
     );
 }
