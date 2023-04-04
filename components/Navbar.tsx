@@ -6,13 +6,14 @@ import AccountMenu from "./AccountMenu";
 // import icons
 import { BiChevronDown, BiSearch, BiBell } from "react-icons/bi";
 
+// menu fixed
 const TOP_OFFSET = 66;
 
 const Navbar = () => {
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     const [showAccountMenu, setShowAccountMenu] = useState(false);
     const [showBackground, setShowBackground] = useState(false);
-
+    // useEffect for fixed menu
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY >= TOP_OFFSET) {
@@ -26,11 +27,11 @@ const Navbar = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-
+    // show mobile menu
     const toggleMobileMenu = useCallback(() => {
         setShowMobileMenu((current) => !current);
     }, []);
-
+    // show acount menu
     const toggleAccountMenu = useCallback(() => {
         setShowAccountMenu((current) => !current);
     }, []);
