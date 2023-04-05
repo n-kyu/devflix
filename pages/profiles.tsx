@@ -27,7 +27,7 @@ const Profiles = () => {
     return (
         <div className=" flex items-center h-full justify-center">
             <div className="flex flex-col">
-                <h1 className="text-3xl md:text-6xl text-red-200 text-center">
+                <h1 className="text-3xl md:text-6xl font-semibold text-purple-100 text-center">
                     Who is watching?
                 </h1>
                 <div className="flex items-center justify-center gap-8 mt-10">
@@ -54,7 +54,7 @@ const Profiles = () => {
                                     alt="profile picture"
                                 />
                             </div>
-                            <div className="mt-4 text-red-500 text 2xl text-center group-hover:text-white">
+                            <div className="mt-4 text-purple-100 font-bold text 2xl text-center group-hover:text-white">
                                 {user?.name}
                             </div>
                         </div>
