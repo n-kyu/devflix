@@ -56,7 +56,7 @@ const Profiles = () => {
                                     alt="profile picture"
                                 />
                             </div>
-                            <div className="mt-4 text-purple-100 font-bold text 2xl text-center group-hover:text-white">
+                            <div className="mt-4 text-purple-100 font-bold text-2xl text-center group-hover:text-white">
                                 {user?.name}
                             </div>
                         </div>

@@ -53,7 +53,7 @@ const Auth = () => {
 
     return (
         <div className="relative h-full w-full bg-[url('/images/hero-bg.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
-            <div className=" bg-black w-full h-full sm:bg-opacity-50">
+            <div className=" w-full h-full">
                 <nav className="px-12 py-5">
                     <img
                         src="/images/bg-logo.png"
@@ -61,7 +61,7 @@ const Auth = () => {
                         className="h-16"
                     />
                     <div className="flex justify-center">
-                        <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
+                        <div className="bg-black bg-opacity-70 px-4 md:px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
                             {/* only show if create account */}
                             <h2 className="text-white text-4xl mb-8 font-bold">
                                 {variant === "login"
