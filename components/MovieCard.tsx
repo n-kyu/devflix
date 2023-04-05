@@ -1,6 +1,7 @@
 // imports
 import React from "react";
 import FavoriteButton from "./FavoriteButton";
+import { useRouter } from "next/router";
 // import icons
 import { BsFillPlayFill } from "react-icons/bs";
 
@@ -10,6 +11,8 @@ interface MovieCardProps {
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
+    const router = useRouter();
+
     return (
         <div
             className="
@@ -83,7 +86,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
                 "
                 >
                     <div className="flex flex-row items-center gap-3">
-                        <div
+                        <button
                             className="
                             cursor-pointer
                             w-6
@@ -98,10 +101,10 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
                             trasition
                             hover:bg-neutral-300                            
                             "
-                            onClick={() => {}}
+                            onClick={() => router.push(`/watch/${data?.id}`)}
                         >
                             <BsFillPlayFill size={30} />
-                        </div>
+                        </button>
                         <FavoriteButton movieId={data?.id} />
                     </div>
 
