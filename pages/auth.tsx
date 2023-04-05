@@ -1,10 +1,9 @@
 // imports
 import { useCallback, useState } from "react";
 import { signIn } from "next-auth/react";
-
-import Input from "@/components/input";
 import axios from "axios";
-
+//import component
+import Input from "@/components/input";
 // import icons
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";

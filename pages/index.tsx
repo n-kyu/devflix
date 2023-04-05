@@ -1,7 +1,7 @@
 // imports
 import { getSession, signOut } from "next-auth/react";
 import { NextPageContext } from "next";
-// component import
+// import components
 import Navbar from "@/components/Navbar";
 import Billboard from "@/components/Billboard";
 import MovieList from "@/components/MovieList";

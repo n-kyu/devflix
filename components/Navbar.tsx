@@ -1,5 +1,6 @@
 // imports
 import { useCallback, useEffect, useState } from "react";
+//import components
 import MobileMenu from "./MobileMenu";
 import NavbarItem from "./NavbarItem";
 import AccountMenu from "./AccountMenu";

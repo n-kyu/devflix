@@ -1,8 +1,8 @@
 // imports
 import React from "react";
-import useMovie from "@/hooks/useMovie";
 import { useRouter } from "next/router";
-
+// import hooks
+import useMovie from "@/hooks/useMovie";
 // import icons
 import { BiLeftArrow } from "react-icons/bi";
 

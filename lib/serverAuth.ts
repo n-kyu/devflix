@@ -3,7 +3,6 @@ import prismadb from '@/lib/prismadb';
 import { NextApiRequest, NextApiResponse  } from "next";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from 'next-auth';
-
 // Authentication
 const serverAuth = async (req: NextApiRequest, res: NextApiResponse) => {
     const session = await getServerSession(req, res, authOptions);

@@ -1,10 +1,8 @@
 // imports
 import React from "react";
 import { useRouter } from "next/router";
-
 // import icons
 import { BsFillPlayFill } from "react-icons/bs";
-
 // interface
 interface PlayButtonProps {
     movieId: string;
