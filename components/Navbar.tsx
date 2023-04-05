@@ -53,7 +53,10 @@ const Navbar = () => {
 
         `}
             >
-                <img className="h-5 lg:h-8" src="/images/bg-logo.png" />
+                <img
+                    className="h-5 lg:h-8 cursor-pointer"
+                    src="/images/bg-logo.png"
+                />
                 <div
                     className="
                     flex-row

@@ -58,7 +58,7 @@ const Auth = () => {
                     <img
                         src="/images/bg-logo.png"
                         alt="logo"
-                        className="h-16"
+                        className="h-16 cursor-pointer"
                     />
                     <div className="flex justify-center">
                         <div className="bg-black bg-opacity-70 px-4 md:px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
