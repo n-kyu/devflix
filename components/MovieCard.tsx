@@ -24,7 +24,8 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
         bg-zinc-800
         col-span
         relative
-        h-[13vw] 
+        h-[13vw]
+        mb-2
         "
         >
             <img
