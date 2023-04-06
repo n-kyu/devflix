@@ -59,8 +59,8 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             scale-0
             group-hover:scale-110
             group-hover:-translate-y-[6vw]
-            group-hover:translate-x-[2vw]
             group-hover:opacity-100
+            ease-in-out
             "
             >
                 <img
