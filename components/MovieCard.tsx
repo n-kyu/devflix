@@ -28,6 +28,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
         "
         >
             <img
+                onClick={() => openModal(data?.id)}
                 className="cursor-pointer
                 object-cover
                 transition
@@ -36,7 +37,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
                 rounded-md
                 group-hover:opacity-90
                 sm:group-hover:opacity-0
-                
+                delay-200
                 w-full
                 h[12vw]
                 "
@@ -53,7 +54,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
             z-10
             invisible
             sm:visible
-            
+            delay-200
             w-full
             scale-0
             group-hover:scale-110
@@ -135,7 +136,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
                     </div>
 
                     <p className="text-green-400 font-semibold mt-4">
-                        New <span className="text-white">2023</span>
+                        New <span className="text-white text-sm">2023</span>
                     </p>
 
                     <div className="flex flex-row mt-4 gap-2 items-center">
@@ -144,9 +145,12 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
                         </p>
                     </div>
                     <div className="flex flex-row mt-4 gap-2 items-center">
-                        <p className="text-white text-[10] lg:text-sm">
-                            {data.genre}
-                        </p>
+                        <div className="flex flex-row pb-1 justify-start items-center">
+                            <span className="text-zinc-400 mr-2 text-sm">
+                                Genres:
+                            </span>
+                            <p className="text-white text-sm">{data?.genre}</p>
+                        </div>
                     </div>
                 </div>
             </div>
