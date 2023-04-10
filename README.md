@@ -1,4 +1,4 @@
-<h1 align="center">Netflix Clone - Anime Version</h1>
+<h1 align="center">:computer: Netflix Clone - Anime Version:computer: </h1>
 
 <table border="0">
     <tr>
