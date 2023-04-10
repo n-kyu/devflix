@@ -1,38 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Netflix Clone - Anime Version</h1>
 
-## Getting Started
+<table border="0">
+    <tr>
+        <td align="center">
+        This is a Netflix clone project, but with a focus on anime. The goal is to create a streaming platform for anime fans similar to Netflix, but exclusively for anime. The application is built with NextJS, TailwindCSS, and MongoDB.
+        </td>
+    </tr>
+</table>
 
-First, run the development server:
+## Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+-   [React](https://react.dev/)
+-   [NextJS](https://nextjs.org/)
+-   [Typescript](https://www.typescriptlang.org)
+-   [TailwindCSS](https://tailwindcss.com/)
+-   [Mongodb](https://www.mongodb.com/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Screenshot
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+![login_page](https://user-images.githubusercontent.com/112785244/230895560-794775c0-2b23-4ea4-af58-89f7dc4ec868.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+![home_page](https://user-images.githubusercontent.com/112785244/230895552-7fab565a-28b6-4a58-b8c7-1f59f60547a5.png)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![animes_list](https://user-images.githubusercontent.com/112785244/230895565-31327610-c3ed-4e18-9fb1-f3da107dfd65.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
 
-## Learn More
+-   User registration and login
+-   Home page with a list of featured anime
+-   Anime detail page with information about the series and the ability to add or remove from favorites list
+-   Page to watch the anime
+-   Responsive design compatible with mobile devices
 
-To learn more about Next.js, take a look at the following resources:
+## Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run the application, you'll need to have Node.js installed on your system.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## How to Run
 
-## Deploy on Vercel
+1. Fork the project
+2. Clone the repository to your local machine
+3. Install the project dependencies by running npm install in the terminal
+4. Configure the MongoDB connection by adding your credentials to the .env file
+5. Start the application by running npm run dev in the terminal
+6. Access the application in your browser at http://localhost:3000
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How to Contribute
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you'd like to contribute to the project, feel free to open an issue or a pull request. All contributions are welcome!
